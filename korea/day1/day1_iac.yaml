@@ -203,7 +203,7 @@ Resources:
     Properties:
       RouteTableId: !Ref AppSubnetBRouteTable
       SubnetId: !Ref AppSubnetB
-  PrivateSubnetBRoute:
+  AppSubnetBRoute:
     Type: AWS::EC2::Route
     Properties:
       DestinationCidrBlock: 0.0.0.0/0
