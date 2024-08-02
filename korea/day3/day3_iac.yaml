@@ -304,7 +304,7 @@ Resources:
             echo 'FROM golang:1.18 AS build
             WORKDIR /source
             COPY src/ ./
-            RUN go mod tidy && go mod download && go build -o ./main
+            RUN go mod tidy && go mod download && CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o ./main
             FROM ubuntu:22.10
             WORKDIR /app
             RUN apk --no-cache add ca-certificates && apk --no-cache upgrade
